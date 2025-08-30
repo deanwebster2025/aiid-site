@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AIID — AI-Integrated Drug Discovery</title>
+  <meta name="description" content="AIID integrates multimodal AI with automated experiments to accelerate target→hit→lead→candidate." />
+  <meta property="og:title" content="AIID — AI-Integrated Drug Discovery" />
+  <meta property="og:description" content="Closed-loop discovery: data → model → robot → data." />
+  <meta property="og:type" content="website" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            base: { bg:'#070a15', fg:'#e8eefc', muted:'#9fb0d1', acc:'#7aa2ff' }
+          },
+          boxShadow: { glow: '0 10px 30px rgba(122,162,255,.25)' }
+        }
+      }
+    }
+  </script>
+  <style>
+    .gradient {
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(122,162,255,.18), rgba(0,0,0,0)),
+        radial-gradient(900px 500px at 100% 10%, rgba(56,189,248,.14), rgba(0,0,0,0));
+    }
+  </style>
+</head>
+<body class="bg-base-bg text-base-fg selection:bg-base-acc/30">
+  <div class="relative min-h-screen overflow-hidden gradient">
+
+    <!-- Nav -->
+    <header class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 3l8 4-8 4-8-4 8-4Z" fill="#7aa2ff"/>
+          <path d="M12 21l8-4v-6l-8 4v6Z" fill="#84ccf7"/>
+          <path d="M12 21l-8-4v-6l8 4v6Z" fill="#647cff"/>
+        </svg>
+        <span class="font-semibold tracking-wide">AIID</span>
+      </a>
+      <nav class="hidden sm:flex items-center gap-6 text-base-muted">
+        <a href="#approach" class="hover:text-white">Approach</a>
+        <a href="#platform" class="hover:text-white">Platform</a>
+        <a href="#contact" class="hover:text-white">Contact</a>
+        <a href="#contact" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-base-acc/70 text-white hover:bg-base-acc/10">Book a demo</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="max-w-7xl mx-auto px-6 pt-6 pb-10 md:pb-24">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="text-base-acc font-medium tracking-widest uppercase text-xs">AI-Integrated Drug Discovery</p>
+          <h1 class="mt-3 text-4xl md:text-6xl font-semibold leading-tight">
+            Shorten discovery cycles with a <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">closed-loop, AI-first</span> platform.
+          </h1>
+          <p class="mt-4 text-base-muted max-w-2xl">
+            We fuse multimodal models (LLMs, GNNs, diffusion) with simulation, lab automation, and active learning to optimize potency, selectivity, and ADMET from target to candidate.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#contact" class="px-5 py-3 rounded-xl bg-base-acc/90 text-black font-medium shadow-glow hover:bg-base-acc">Talk to us</a>
+            <a href="#approach" class="px-5 py-3 rounded-xl border border-white/15 hover:border-white/30">How it works</a>
+          </div>
+          <div class="mt-6 flex flex-wrap gap-2 text-xs text-base-muted">
+            <span class="px-2.5 py-1 rounded-full border border-white/10">De-novo generation</span>
+            <span class="px-2.5 py-1 rounded-full border border-white/10">QSAR/GNN</span>
+            <span class="px-2.5 py-1 rounded-full border border-white/10">Docking/MD</span>
+            <span class="px-2.5 py-1 rounded-full border border-white/10">PK/PD</span>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-blue-500/20 to-cyan-400/10 blur-2xl"></div>
+          <div class="relative rounded-3xl border border-white/10 bg-white/5 backdrop-blur p-4">
+            <!-- Pretty code card -->
+            <div class="rounded-2xl bg-black/50 border border-white/10 overflow-hidden">
+              <div class="flex items-center gap-1 px-4 py-2 border-b border-white/10">
+                <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                <span class="ml-3 text-xs text-base-muted">active-learning.py</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-blue-100/90 overflow-auto"><code># pseudo-loop
+for cycle in range(1, N):
+    designs   = generator.propose(objectives)
+    selected  = bayes_opt.rank(designs, data)
+    results   = lab.run(selected)
+    data     += analyze(results)
+    model     = retrain(data)
+</code></pre>
+            </div>
+            <div class="grid grid-cols-2 gap-3 mt-3">
+              <div class="p-4 rounded-xl border border-white/10 bg-white/5">
+                <p class="text-sm text-base-muted">Cycle time</p>
+                <p class="text-2xl font-semibold">−42%</p>
+              </div>
+              <div class="p-4 rounded-xl border border-white/10 bg-white/5">
+                <p class="text-sm text-base-muted">AI-proposed synthesized</p>
+                <p class="text-2xl font-semibold">68%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="platform" class="max-w-7xl mx-auto px-6 pb-16 md:pb-24">
+      <div class="grid md:grid-cols-4 gap-5">
+        <div class="p-5 rounded-2xl border border-white/10 bg-white/5">
+          <h3 class="font-semibold">Data layer</h3>
+          <p class="mt-2 text-base-muted">Unified ingest of ELN/LIMS, omics, structures, HTS—cleaned and versioned.</p>
+        </div>
+        <div class="p-5 rounded-2xl border border-white/10 bg-white/5">
+          <h3 class="font-semibold">Model layer</h3>
+          <p class="mt-2 text-base-muted">Foundation/LLMs, QSAR/GNNs, docking/MD, de-novo generators, PK/PD.</p>
+        </div>
+        <div class="p-5 rounded-2xl border border-white/10 bg-white/5">
+          <h3 class="font-semibold">Orchestration</h3>
+          <p class="mt-2 text-base-muted">Active learning & multi-objective optimization to pick next-best experiments.</p>
+        </div>
+        <div class="p-5 rounded-2xl border border-white/10 bg-white/5">
+          <h3 class="font-semibold">Execution</h3>
+          <p class="mt-2 text-base-muted">Automated synthesis/assay; standardized QC. Results loop back to retrain models.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section id="approach" class="max-w-7xl mx-auto px-6 pb-16 md:pb-24">
+      <h2 class="text-2xl md:text-3xl font-semibold">How it works</h2>
+      <ol class="mt-6 grid md:grid-cols-3 gap-5 list-decimal list-inside text-base-muted">
+        <li class="p-5 rounded-2xl border border-white/10 bg-white/5"><span class="text-white">Define objective</span> & metrics.</li>
+        <li class="p-5 rounded-2xl border border-white/10 bg-white/5"><span class="text-white">Generate & prioritize</span> with AI + domain constraints.</li>
+        <li class="p-5 rounded-2xl border border-white/10 bg-white/5"><span class="text-white">Automate experiments</span>, analyze, and <span class="text-white">retrain</span>.</li>
+      </ol>
+    </section>
+
+    <!-- CTA -->
+    <section id="contact" class="max-w-7xl mx-auto px-6 pb-24">
+      <div class="rounded-3xl border border-white/10 bg-gradient-to-r from-blue-500/10 to-cyan-400/10 p-8 md:p-12">
+        <div class="md:flex items-center justify-between gap-8">
+          <div>
+            <h3 class="text-2xl md:text-3xl font-semibold">Ready to explore a pilot?</h3>
+            <p class="mt-2 text-base-muted">Email <a class="underline" href="mailto:hello@aiidlabs.com">hello@aiidlabs.com</a> and we’ll respond within 1 business day.</p>
+          </div>
+          <a href="mailto:hello@aiidlabs.com" class="mt-6 md:mt-0 inline-flex items-center justify-center px-6 py-3 rounded-xl bg-white text-black font-medium shadow-glow hover:opacity-90">Book a demo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="max-w-7xl mx-auto px-6 pb-10 text-sm text-base-muted">
+      <div class="border-t border-white/10 pt-6 flex flex-wrap items-center justify-between gap-4">
+        <p>© <span id="year"></span> AIID. All rights reserved.</p>
+        <div class="flex gap-4">
+          <a href="#" class="hover:text-white">Privacy</a>
+          <a href="#" class="hover:text-white">Terms</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
+</body>
+</html>
